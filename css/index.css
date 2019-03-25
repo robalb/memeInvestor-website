@@ -149,6 +149,7 @@ body {
   font-family: 'Julius Sans One', sans-serif;
   font-size: 1rem;
   color: white;
+  outline:none;
 }
 .content{
   min-height: 50vh;
