@@ -12,7 +12,7 @@
 
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet"> --> 
-    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Julius+Sans+One|Roboto:300" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Julius+Sans+One|Roboto:300|Playfair+Display:400,700" rel="stylesheet"> 
     <!-- page -->
     <link type="text/css" rel="stylesheet" href="css/index.css"/>
     <script type="module" src="js/index.js"></script>
@@ -22,16 +22,33 @@
     <div class="header-container">
       <header>
         <h1 class="logo"><a href="#">M</a></h1>
-        <ul class="main-nav">
-          <li><a href="#">investors</a></li>
-          <li><a href="#">firms</a></li>
-          <li><a href="#">dashboard</a></li>
-          <li><a href="#">=</a></li>
-        </ul>
+        <div class="nav-container">
+          <ul class="active">
+            <li><a href="#">investors</a></li>
+            <li><a href="#">firms</a></li>
+            <li><a href="#">dashboard</a></li>
+          </ul>
+          <!-- <a class="burger" href="#">=</a> -->
+          <div class="burger-hitbox" id="js-burger">
+            <div class="burger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
       </header>
+
     </div>
+
+    <ul class="nav-mobile">
+      <li><a href="#">X</a></li>
+      <li><a href="#">investors</a></li>
+      <li><a href="#">firms</a></li>
+      <li><a href="#">dashboard</a></li>
+    </ul>
     <div class="hero">
-      <video autoplay loop src="./resources/videos/1.mp4"></video>
+      <video autoplay loop src="./resources/videos/6.mp4"></video>
       <!-- this is a demo video - the local folder containing free hd stock videos is currently gitignored -->
       <!-- <video autoplay loop src="http://www.piedpiper.com/app/themes/pied-piper/dist/images/Video_1.mp4"></video> -->
       <div class="hero-content">
@@ -54,19 +71,18 @@
         <p>
         Meme investor bot (mib) is a reddit bot that can help
         you invest in memes and make a fortune out of it. You can browse and invest on the best memes
-        directly on the r/memeEconomy subreddit, create or join a firm of professional investors,and manage
+        directly on the <a href="#">r/memeEconomy</a> subreddit, create or join a firm of professional investors,and manage
         your assets and investments right on this website.<br><br>
-        This is a free, open source project. you can contribute to it by donating on our patreon, or
-        giving your suggestions on the dedicated subreddit or github page
+        This is a free, open source project. you can contribute to it by donating on our <a>patreon</a>, or
+        giving your suggestions on the dedicated <a href="#">subreddit</a> or <a href="#">github</a> page
         </p>
       </div>
       <div id="get-started" class="content">
-        <br> <br> <br> <br>
         <p>
-        nel mezzo del cammin di nostra vita mi ritrovai per una selva oscura che la diritta via
-        era smarrita. Ahi tanto a dir qual'era è cosa dura esta selva selvaggia e aspra e forte 
-        che nel cor rinnova la paura. io non so ben ridir come v'entrai tant'ero pien di sonno
-        a quel punto che la verace via abbandonai
+        To invoke a command, reply to the top-level u/MemeInvestor bot comment in the
+        comment section of anyr/MemeEconomy post.You can visit the wiki for a more 
+        in depth explanation and to see a list of all the bot commands commands that
+        are not direct replies to the bot will be ignored
         </p>
         <p>
         nel mezzo del cammin di nostra vita mi ritrovai per una selva oscura che la diritta via
