@@ -34,9 +34,13 @@
 
   --complement-0: #FFC2B6;
   --complement-1: #FFFBFA;
-  --complement-2: #FFE0DA;
+  --complement-2: #FFe0da;
   --complement-3: #FFA493;
   --complement-4: #FF8770;
+
+  --green-1: #2caf92;
+  --green-2: #1E6D68;
+  --green-3: #55e7ca;
 }
 
 *, *:before, *:after {
@@ -70,6 +74,10 @@ background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fi
 /*--------------------------------------------------
                       HEADER
 --------------------------------------------------*/
+
+/*
+ * top bar header
+ */
 .header-container{
   width:100%;
   height:0;
@@ -103,10 +111,9 @@ background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fi
 
 .header-container header a:hover {
   color: var(--primary-2);
-  color: #2caf92;
+  color: var(--green-1);
+  color: var(--green-3);
 }
-
-
 
 .header-container header{
   display:flex;
@@ -129,6 +136,9 @@ background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fi
   align-items:center;
 }
 
+/*
+ * burger
+ */
 .burger-hitbox{
   height:100%;
   display: flex;
@@ -162,7 +172,6 @@ background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fi
 }
 
 
-
 @media (max-width: 420px) {
   .header-container header ul{
     display:none;
@@ -173,6 +182,9 @@ background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fi
 
 }
 
+/*
+ * mobile navigation winow
+ */
 .nav-mobile{
   position: fixed;
   top:-5px;
@@ -181,7 +193,7 @@ background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fi
   height:105%;
   z-index: 420;
   background-color: #010406;
-  background-image: linear-gradient(270deg,#2caf92,#1e6d68);
+  background-image: linear-gradient(270deg,var(--green-1),var(--green-2));
 
   display:none;
   margin: 0;
@@ -209,7 +221,7 @@ background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fi
   animation-duration: 0.5s;
 }
 .fade-out li:first-child{
-  animation-name: slide-top;
+  animation-name: slide-right;
   animation-duration: 0.5s;
 }
 
@@ -224,33 +236,21 @@ background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fi
 }
 
 @keyframes bg-fade-in {
-  from{
-    opacity:0.7;
-  }
-  to{
-    opacity:1;
-  }
+  from{ opacity:0.7; }
+  to{ opacity:1; }
 }
 
 @keyframes bg-fade-out{
-  from{
-    opacity:0.7;
-  }
-  to{
-    opacity:0;
-  }
+  from{ opacity:0.7; }
+  to{ opacity:0; }
 }
 
 @keyframes slide-left{
-  from{
-    left: 200px;
-  }
-  to{
-    left:0px;
-  }
+  from{ left: 200px; }
+  to{ left:0px; }
 }
 
-@keyframes slide-top{
+@keyframes slide-right{
   from{
     left: 0px;
     opacity: 0.7;
@@ -282,13 +282,56 @@ background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fi
   margin-bottom: 30px;
 }
 
+/*
+ * reddit login window-sidebar
+ */
+.login-container{
+  position: fixed;
+  top:-5px;
+  left:0;
+  width:100%;
+  height:105%;
+  z-index:410;
+  display:flex;
+  justify-content: flex-end;
+  background-color: rgba(0,0,0,0.2);
+  backdrop-filter: blur(5px);
+}
+.login{
+  max-width:400px;
+  height:100%;
+  z-index: 422;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  background-color: var(--white-0);
+}
+.login a{
+  padding:20px;
+  cursor:pointer;
+}
+.login a i{
+  font-size: 3rem;
+}
+.login div{
+  padding:20px;
+  height:100%;
+  margin-top: 30px;
+  /* display:flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+}
+.login div.page-2{
+  display:none;
+}
+
 /*--------------------------------------------------
                       HERO
 --------------------------------------------------*/
 
 .hero {
   background-color: #171717;
-  background-image: linear-gradient(270deg,#2caf92,#1e6d68);
+  background-image: linear-gradient(270deg,var(--green-1),var(--green-2));
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -357,7 +400,7 @@ background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fi
   font-size: 1rem;
   color: white;
   outline:none;
-  background-image: linear-gradient(270deg,#2caf92,#1e6d68);
+  background-image: linear-gradient(270deg,var(--green-1),var(--green-2));
 }
 
 
@@ -426,11 +469,10 @@ background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fi
 .content a{
   color: var(--black-0);
   text-decoration: none;
-  background-image: linear-gradient(270deg,#2caf92,#1e6d68);
-  background: linear-gradient(transparent 85%, #2caf92 0%);
+  background: linear-gradient(transparent 85%, var(--green-3) 0%);
 }
 .content a:hover{
-  background: linear-gradient(transparent 75%, #2caf92 0%);
+  background: linear-gradient(transparent 55%, var(--green-3) 0%);
 }
 
 @media (max-width: 1760px) {
