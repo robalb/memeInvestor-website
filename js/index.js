@@ -7,18 +7,32 @@
 {
   document.addEventListener('DOMContentLoaded', ()=>{
 
-    document.getElementById('js-burger').addEventListener('click', function(e){
+    const gid = id => document.getElementById(id)
+
+    const ael = (id, type, callBack) => gid(id).addEventListener(type, callBack)
+    
+    const ca = (id, cls) => gid(id).classList.add(cls)
+    const cr = (id, cls) => gid(id).classList.remove(cls)
+
+
+
+    /*
+     * navbar burger + overlay
+     */
+    ael('js-burger', 'click', e =>{
       console.log(1);
-      document.getElementById('js-nav').classList.add('visible');
+      ca('js-nav', 'visible')
     });
 
-    document.getElementById('js-close-nav').addEventListener('click', function(e){
-      document.getElementById('js-nav').classList.add('fade-out');
+    ael('js-close-nav', 'click', e =>{
+      ca('js-nav', 'fade-out')
       setTimeout(()=>{
-      document.getElementById('js-nav').classList.remove('visible');
-      document.getElementById('js-nav').classList.remove('fade-out');
+        cr('js-nav', 'visible')
+        cr('js-nav', 'fade-out')
       }, 400);
     });
+
+
 
   });
 }

@@ -295,7 +295,8 @@ background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fi
   display:flex;
   justify-content: flex-end;
   background-color: rgba(0,0,0,0.2);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(50px);
+  display: none;
 }
 .login{
   max-width:400px;
@@ -305,8 +306,9 @@ background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fi
   flex-direction:column;
   align-items:flex-start;
   background-color: var(--white-0);
+  overflow-y:auto;
 }
-.login a{
+.login a.close-login{
   padding:20px;
   cursor:pointer;
 }
@@ -317,13 +319,63 @@ background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fi
   padding:20px;
   height:100%;
   margin-top: 30px;
-  /* display:flex; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
 }
 .login div.page-2{
   display:none;
 }
+
+.login button{
+  cursor:pointer;
+  margin-top: 20px;
+  background-color:transparent;
+  padding:15px;
+  font-family: Roboto, 'Julius Sans One', sans-serif;
+  font-weight:300;
+  
+  font-size: 1.2rem;
+  color: white;
+  outline:none;
+  box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.2);
+}
+.login button:hover{
+  box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.1);
+}
+
+.login .reddit-bt{
+  background-image: linear-gradient(200deg, #e62a16, #F15646);
+}
+.login .guest-bt{
+  color: var(--black-1);
+}
+
+.login .checkbox-container{
+  margin-top: 20px;
+  font-family: Roboto, 'Julius Sans One', sans-serif;
+  font-size: 1.1rem;
+}
+.checkbox-container input[type="checkbox"]{
+  margin-right: 6px;
+}
+.login p{
+  font-family: Roboto, 'Julius Sans One', sans-serif;
+  font-size: 1.1rem;
+  margin-top:10px;
+}
+.login .description{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.login p a{
+  color: var(--black-0);
+  text-decoration: none;
+  background: linear-gradient(transparent 85%, var(--green-3) 0%);
+}
+.login p a:hover{
+  background: linear-gradient(transparent 55%, var(--green-3) 0%);
+}
+
+
 
 /*--------------------------------------------------
                       HERO
