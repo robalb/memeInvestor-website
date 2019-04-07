@@ -59,15 +59,15 @@ body {
   font-family: 'Julius Sans One', sans-serif;
   background-color: var(--white-0);
   color: var(--black-0);
-background: #A1FFCE;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #FAFFD1, #f7f9f9);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #FAFFD1, #f7f9f9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/* background: #A1FFCE;  /1* fallback for old browsers *1/ */
+/* background: -webkit-linear-gradient(to right, #FAFFD1, #f7f9f9);  /1* Chrome 10-25, Safari 5.1-6 *1/ */
+/* background: linear-gradient(to right, #FAFFD1, #f7f9f9); /1* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *1/ */
 
-background: linear-gradient(to right, #A1FFCE, var(--primary-1) );
+/* background: linear-gradient(to right, #A1FFCE, var(--primary-1) ); */
 
-/* background: #ECE9E6;  /1* fallback for old browsers *1/ */
-background: -webkit-linear-gradient(to left, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/* /1* background: #ECE9E6;  /2* fallback for old browsers *2/ *1/ */
+/* background: -webkit-linear-gradient(to left, #FFFFFF, #ECE9E6);  /1* Chrome 10-25, Safari 5.1-6 *1/ */
+/* background: linear-gradient(to left, #FFFFFF, #ECE9E6); /1* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *1/ */
 
 }
 
@@ -415,12 +415,17 @@ background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fi
   background-image: linear-gradient(270deg,var(--green-1),var(--green-2));
   width: 100%;
   height: 100vh;
+  max-height: 600px;
   overflow: hidden;
   color: #e3dac9;
   color: var(--white-1);
 }
 .hero video {
   object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.hero .particles{
   width: 100%;
   height: 100%;
 }
@@ -441,8 +446,8 @@ background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fi
   flex-direction:column;
   justify-content: center;
   text-align: center;
-  background-color: rgba(0,0,0,0.7);
-  /* background-color: rgba(0,0,0,0.2); */
+  /* background-color: rgba(0,0,0,0.7); */
+  background-color: rgba(0,0,0,0.2);
 }
 .hero .hero-content img{
   height: 180px;
@@ -474,14 +479,14 @@ background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fi
   margin: 20px;
   background-color:transparent;
   padding:20px;
-  border-radius: 50px;
   font-family: 'Julius Sans One', sans-serif;
+  box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.4);
   font-weight:700;
   
   font-size: 1rem;
   color: white;
   outline:none;
-  background-image: linear-gradient(270deg,var(--green-1),var(--green-2));
+  /* background-image: linear-gradient(270deg,var(--green-1),var(--green-2)); */
 }
 
 
@@ -491,35 +496,26 @@ background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fi
 --------------------------------------------------*/
 .transition{
   width: 100%;
-  height: 120px;
+  height: 0px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
-  box-shadow: 0px -90px 80px 0px #010406;
-  z-index: 2;
+  z-index: 20;
 }
 .dark-bar{
   width: 100%;
-  height: 81px;
+  height: 0px;
   background-color: #010406;
 }
 .transition img{
   pointer-events:none;
   width:auto;
   height:430px;
+  position:relative;
+  top: -430px;
 }
 
-@media (max-width: 837px) {
-  .dark-bar{
-    width: 0px;
-  }
-  .transition img{
-    width: 100%;
-    height: auto;
-  }
-}
-
-@media (max-width: 705px) {
+@media (max-width: 705px) or (max-height: 500px) {
   .transition{
     display:none
   }
@@ -555,27 +551,6 @@ background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fi
 .content a:hover{
   background: linear-gradient(transparent 55%, var(--green-3) 0%);
 }
-
-#about{
-  margin-bottom:100px;
-}
-@media (max-width: 1760px) {
-  #about{
-    max-width: calc(100% - 320px);
-  }
-}
-
-@media (max-width: 860px) {
-  #about{
-    max-width: calc( 100% - 250px);
-  }
-}
-@media (max-width: 705px) {
-  #about{
-    max-width: 100%;
-  }
-}
-
 
 .presentation{
   padding:30px;
