@@ -43,7 +43,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
   bt('js-show-login', showLogin)
   bt('js-mob-show-login', showLogin)
   bt('js-close-login', e =>{
-    cr('js-login', 'login-visible')
+    ca('js-login', 'login-fade-out')
+    setTimeout(() =>{
+      cr('js-login', 'login-fade-out')
+      cr('js-login', 'login-visible')
+    }, 400)
   });
 
 

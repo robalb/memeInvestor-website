@@ -296,7 +296,7 @@ background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fi
   z-index:430;
   display:flex;
   justify-content: flex-end;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.5);
   backdrop-filter: blur(50px);
   display: none;
 }
@@ -382,7 +382,29 @@ background: linear-gradient(to left, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fi
   animation-name: bg-fade-in;
   animation-duration: 0.4s;
 }
+.login-visible .login{
+  animation-name: slide-left-fast;
+  animation-duration: 0.4s;
+}
+.login-fade-out{
+  animation-name: bg-fade-out;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+.login-fade-out .login{
+  animation-name: slide-right-fast;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
 
+@keyframes slide-left-fast {
+  from{ right: -400px; }
+  to{ right: 0px; }
+}
+@keyframes slide-right-fast {
+  from{ right: 0px; }
+  to{ right: -400px; }
+}
 
 /*--------------------------------------------------
                       HERO
