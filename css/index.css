@@ -453,8 +453,8 @@ body {
   text-align: center;
   /* background-color: rgba(0,0,0,0.7); */
   background-color: rgba(0,0,0,0.2);
-    /* background-image: url("../resources/noise2-3.png"); */
-  /* background-repeat: repeat; */
+    background-image: url("../resources/noise2-3.png");
+  background-repeat: repeat;
 }
 .hero .hero-content img{
   height: 180px;
