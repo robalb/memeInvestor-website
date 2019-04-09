@@ -611,11 +611,15 @@ clip-path: polygon(0% 100%, 3% 97%, 6% 96%, 8% 94%, 10% 100%, 12% 96%, 14% 96%, 
   justify-content: center;
   flex-wrap: wrap;
 }
+.presentation img{
+  width: auto;
+  height: 150px;
+}
 .presentation div{
   margin: 30px;
   padding: 20px;
   box-shadow: 0px 0px 14px 0px rgba(85, 231, 202,0.75);
-  box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.0);
   width: 300px;
   height: 200px;
   text-align:center;
