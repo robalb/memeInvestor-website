@@ -453,6 +453,8 @@ body {
   text-align: center;
   /* background-color: rgba(0,0,0,0.7); */
   background-color: rgba(0,0,0,0.2);
+    /* background-image: url("../resources/noise2-3.png"); */
+  /* background-repeat: repeat; */
 }
 .hero .hero-content img{
   height: 180px;
@@ -579,6 +581,7 @@ clip-path: polygon(0% 100%, 3% 97%, 6% 96%, 8% 94%, 10% 100%, 12% 96%, 14% 96%, 
 }
 .content{
   padding: 30px;
+  margin-top:60px;
 }
 .content h1{
   font-size: 2.5rem;
@@ -607,6 +610,7 @@ clip-path: polygon(0% 100%, 3% 97%, 6% 96%, 8% 94%, 10% 100%, 12% 96%, 14% 96%, 
 
 .presentation{
   padding:30px;
+  margin-top:40px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -616,12 +620,11 @@ clip-path: polygon(0% 100%, 3% 97%, 6% 96%, 8% 94%, 10% 100%, 12% 96%, 14% 96%, 
   height: 150px;
 }
 .presentation div{
-  margin: 30px;
+  margin: 30px#e78762;
   padding: 20px;
   box-shadow: 0px 0px 14px 0px rgba(85, 231, 202,0.75);
   box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.0);
   width: 300px;
-  height: 200px;
   text-align:center;
 }
 .presentation p{
@@ -629,3 +632,14 @@ clip-path: polygon(0% 100%, 3% 97%, 6% 96%, 8% 94%, 10% 100%, 12% 96%, 14% 96%, 
   font-family: 'Roboto', sans-serif;
   font-size: 1.1rem;
 }
+
+#get-started{
+  /* background-image: url("../resources/paper3.png"); */
+  /* background-repeat: repeat; */
+}
+#get-started .post-img{
+  float:right;
+  width:auto;
+  height:300px;
+}
+
