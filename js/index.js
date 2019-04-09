@@ -16,7 +16,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const ca = (id, cls) => gid(id).classList.add(cls)
   const cr = (id, cls) => gid(id).classList.remove(cls)
 
-
+  /*
+   * init particles
+   */
+  particlesJS.load('particles', 'js/particles.json', function() {
+    console.log('callback - particles.js config loaded');
+  });
 
   /*
    * navbar burger + overlay
