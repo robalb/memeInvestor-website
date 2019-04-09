@@ -406,6 +406,11 @@ body {
   to{ right: -400px; }
 }
 
+/*
+ * cookie popup
+ */
+
+
 /*--------------------------------------------------
                       HERO
 --------------------------------------------------*/
@@ -554,7 +559,12 @@ clip-path: polygon(0% 100%, 3% 97%, 6% 96%, 8% 94%, 10% 100%, 12% 96%, 14% 96%, 
 }
 }
 
-@media (max-width: 705px) or (max-height: 500px) {
+@media screen and (max-width: 705px){
+  .transition{
+    display:none
+  }
+}
+@media screen and (max-height: 500px){
   .transition{
     display:none
   }
@@ -603,10 +613,15 @@ clip-path: polygon(0% 100%, 3% 97%, 6% 96%, 8% 94%, 10% 100%, 12% 96%, 14% 96%, 
 }
 .presentation div{
   margin: 30px;
-  padding: 30px;
+  padding: 20px;
   box-shadow: 0px 0px 14px 0px rgba(85, 231, 202,0.75);
   box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.2);
-  width: 200px;
+  width: 300px;
   height: 200px;
   text-align:center;
+}
+.presentation p{
+  margin-top:10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
 }
