@@ -16,6 +16,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const ca = (id, cls) => gid(id).classList.add(cls)
   const cr = (id, cls) => gid(id).classList.remove(cls)
 
+
+  /*
+   * get started
+   */
+  bt('js-get-started', e =>{
+    gid('transition').scrollIntoView({ behavior: 'smooth' })
+  });
+
   /*
    * init particles
    */
