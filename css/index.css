@@ -1,58 +1,14 @@
 
-:root{
-  /* palette 1 - temporary */
-  --white-0: #f7f9f9;
-  --white-1: #ecf0f1;
-
-  --black-0: #212121
-  --black-1: #222222;
-
-  --base: #11AD33;
-  --base-light: #35B651;
-  --base-light2: #59C972;
-  --base-dark: #078823;
-  --base-dark2: #006A17;
-
-  --compl: #E62A16;
-  --compl-light: #FF7E71;
-  --compl-light2: #F15646;
-  --compl-dark: #B41A0A;
-  --compl-dark2: #8D0D00;
-
-  /* palette 2 */
-  --white-0: #f7f9f9;
-  --white-1: #ecf0f1;
-
-  --black-0: #212121;
-  --black-1: #222222;
-  --black-0: rgba(0,0,0,0.8);
-
-  --primary-0: #A8EBBF;
-  --primary-1: #FAFFFB;
-  --primary-2: #D4F8E0;
-  --primary-3: #7CD79B;
-  --primary-4: #53BC76;
-
-  --complement-0: #FFC2B6;
-  --complement-1: #FFFBFA;
-  --complement-2: #FFe0da;
-  --complement-3: #FFA493;
-  --complement-4: #FF8770;
-
-  --green-1: #2caf92;
-  --green-2: #1E6D68;
-  --green-3: #55e7ca;
-}
 
 *, *:before, *:after {
-  box-sizing: inherit;
-}
-
-* {
   margin: 0;
   padding: 0;
   border: 0 none;
+  box-sizing: inherit;
   position: relative;
+}
+
+*{
   scroll-behavior: smooth;
 }
 
@@ -77,26 +33,26 @@ body {
 --------------------------------------------------*/
 
 /*
- * top bar header
+ * top nav
  */
-.header-container{
+.top-nav-container{
   width:100%;
   height:0;
   z-index: 69;
 }
-.header-container header ul{
-  display:flex;
+.top-nav-container nav ul{
+  display:none;
   margin: 0;
   padding: 0;
   margin-top: 5px;
   list-style: none;
 }
-.header-container header .logo {
+.top-nav-container nav .logo {
   margin: 0;
   font-size: 1.45em;
 }
-.header-container header .logo a,
-.header-container header li a {
+.top-nav-container nav .logo a,
+.top-nav-container nav li a {
   padding: 10px 15px;
   text-transform: uppercase;
   text-align: center;
@@ -104,20 +60,20 @@ body {
   display: block;
 }
 
-.header-container header a {
+.top-nav-container nav a {
   color: var(--white-1);
   font-size: .99em;
   font-weight:700;
   text-decoration: none;
 }
 
-.header-container header a:hover {
+.top-nav-container nav a:hover {
   color: var(--primary-2);
   color: var(--green-1);
   color: var(--green-3);
 }
 
-.header-container header{
+.top-nav-container nav{
   display:flex;
   flex-direction: row;
   justify-content: space-between;
@@ -132,7 +88,7 @@ body {
   border-radius: 5px;
 }
 
-.nav-container{
+.top-nav-container nav .nav-block{
   display: flex;
   justify-content: flex-end;
   align-items:center;
@@ -150,7 +106,7 @@ body {
 }
 
 .burger{
-  display: none;
+  display: flex;
   border: none;
   outline: none;
   margin-left: 15px;
@@ -163,254 +119,30 @@ body {
 
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-end;
 }
 .burger span{
   width:100%;
   height: 2px;
   background-color: white;
 }
+.burger span:nth-child(3){
+  width:60%;
+}
 .burger-hitbox:hover span:nth-child(2) {
   transform: translate(10px);
 }
 
 
-@media (max-width: 420px) {
-  .header-container header ul{
-    display:none;
-  }
-  .burger{
+@media (min-width: 420px) {
+  .top-nav-container nav ul{
     display:flex;
   }
-
-}
-
-/*
- * mobile navigation winow
- */
-.nav-mobile{
-  position: fixed;
-  top:-5px;
-  left:0;
-  width:100%;
-  height: 105%;
-  z-index: 420;
-  background-color: #010406;
-  background-image: linear-gradient(270deg,var(--green-1),var(--green-2));
-
-  display:none;
-  margin: 0;
-  padding: 0;
-  margin-top: 5px;
-  list-style: none;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-}
-
-.nav-visible{
-  display: flex;
-  animation-name: bg-fade-in;
-  animation-duration: 0.4s;
-}
-.nav-fade-out{
-  animation-name: bg-fade-out;
-  animation-duration: 0.4s;
-  animation-fill-mode: forwards;
-}
-
-.nav-visible li{
-  animation-name: slide-left;
-  animation-duration: 0.5s;
-}
-.nav-fade-out li:first-child{
-  animation-name: slide-right;
-  animation-duration: 0.5s;
-}
-
-.nav-visible li:nth-child(2){
-  animation-duration: 0.4s;
-}
-.nav-visible li:nth-child(3){
-  animation-duration: 0.3s;
-}
-.nav-visible li:nth-child(4){
-  animation-duration: 0.2s;
-}
-
-@keyframes bg-fade-in {
-  from{ opacity:0.7; }
-  to{ opacity:1; }
-}
-
-@keyframes bg-fade-out{
-  from{ opacity:0.7; }
-  to{ opacity:0; }
-}
-
-@keyframes slide-left{
-  from{ left: 200px; }
-  to{ left:0px; }
-}
-
-@keyframes slide-right{
-  from{
-    left: 0px;
-    opacity: 0.7;
+  .burger{
+    display:none;
   }
-  to{
-    left: 200px;
-    opacity: 0;
-  }
-}
-.nav-mobile li a{
-  color: var(--white-0);
-  text-decoration:none;
-  font-size: 2rem;
-  cursor:pointer;
-}
-.nav-mobile li:nth-child(1) a{
-  cursor:pointer;
-  padding:10px;
-}
-.nav-mobile li a i{
-  font-size: 3.5rem;
-}
-.nav-mobile li a:hover{
-  border-bottom: 2px solid var(--white-1);
-}
-.nav-mobile li:nth-child(1) a:hover{
-  border:0;
-}
-.nav-mobile li{
-  margin-bottom: 30px;
-}
 
-/*
- * reddit login window-sidebar
- */
-.login-container{
-  position: fixed;
-  top:-5px;
-  left:0;
-  width:100%;
-  height:105%;
-  z-index:430;
-  display:flex;
-  justify-content: flex-end;
-  background-color: rgba(0,0,0,0.5);
-  backdrop-filter: blur(50px);
-  display: none;
 }
-.login{
-  max-width:400px;
-  height:100%;
-  z-index: 430;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  background-color: var(--white-0);
-  overflow-y:auto;
-}
-.login a.close-login{
-  padding:20px;
-  cursor:pointer;
-}
-.login a i{
-  font-size: 3rem;
-}
-.login div{
-  padding:20px;
-  height:100%;
-  margin-top: 30px;
-}
-.login div.page-2{
-  display:none;
-}
-
-.login button{
-  cursor:pointer;
-  margin-top: 20px;
-  background-color:transparent;
-  padding:15px;
-  font-family: Roboto, 'Julius Sans One', sans-serif;
-  font-weight:300;
-  
-  font-size: 1.2rem;
-  color: white;
-  outline:none;
-  box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.2);
-}
-.login button:hover{
-  box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.1);
-}
-
-.login .reddit-bt{
-  background-image: linear-gradient(200deg, #e62a16, #F15646);
-}
-.login .guest-bt{
-  color: var(--black-1);
-}
-
-.login .checkbox-container{
-  margin-top: 20px;
-  font-family: Roboto, 'Julius Sans One', sans-serif;
-  font-size: 1.1rem;
-}
-.checkbox-container input[type="checkbox"]{
-  margin-right: 6px;
-}
-.login p{
-  font-family: Roboto, 'Julius Sans One', sans-serif;
-  font-size: 1.1rem;
-  margin-top:10px;
-}
-.login .description{
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-.login p a{
-  color: var(--black-0);
-  text-decoration: none;
-  background: linear-gradient(transparent 85%, var(--green-3) 0%);
-}
-.login p a:hover{
-  background: linear-gradient(transparent 55%, var(--green-3) 0%);
-}
-
-.login-visible{
-  display: flex;
-  animation-name: bg-fade-in;
-  animation-duration: 0.4s;
-}
-.login-visible .login{
-  animation-name: slide-left-fast;
-  animation-duration: 0.4s;
-}
-.login-fade-out{
-  animation-name: bg-fade-out;
-  animation-duration: 0.4s;
-  animation-fill-mode: forwards;
-}
-.login-fade-out .login{
-  animation-name: slide-right-fast;
-  animation-duration: 0.4s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes slide-left-fast {
-  from{ right: -400px; }
-  to{ right: 0px; }
-}
-@keyframes slide-right-fast {
-  from{ right: 0px; }
-  to{ right: -400px; }
-}
-
-/*
- * cookie popup
- */
-
 
 /*--------------------------------------------------
                       HERO
@@ -642,5 +374,217 @@ clip-path: polygon(0% 100%, 3% 97%, 6% 96%, 8% 94%, 10% 100%, 12% 96%, 14% 96%, 
   float:right;
   width:auto;
   height:300px;
+}
+
+
+/*--------------------------------------------------
+                      MODALS
+--------------------------------------------------*/
+
+
+/*
+ * mobile navigation window
+ */
+.nav-mobile{
+  position: fixed;
+  top:-5px;
+  left:0;
+  width:100%;
+  height: 105%;
+  z-index: 420;
+  background-color: #010406;
+  background-image: linear-gradient(270deg,var(--green-1),var(--green-2));
+
+  visibility:hidden;
+  opacity: 0;
+  transition: all 0.4s;
+
+  margin: 0;
+  padding: 0;
+  margin-top: 5px;
+  list-style: none;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+.nav-mobile li{
+  margin-bottom: 30px;
+  transition: all 0.5s;
+  transform: translate(200px);
+}
+/* right now the li elements in the mobile navigation dialog
+ * show up with a slight speed offset each, but disappear with the same speed.
+ * You can change that, and make them disappear with the same offset as they appear,
+ * by uncommenting this block of nth-child selectors, and commenting out the next
+ * block of nth-child selectors, around 30 lines down from here
+ */
+/* .nav-mobile li:nth-child(2){ */
+/*   transform: translate(150px); */
+/* } */
+/* .nav-mobile li:nth-child(3){ */
+/*   transform: translate(100px); */
+/* } */
+/* .nav-mobile li:nth-child(4){ */
+/*   transform: translate(50px); */
+/* } */
+.nav-mobile li a{
+  color: var(--white-0);
+  text-decoration:none;
+  font-size: 2rem;
+  cursor:pointer;
+}
+.nav-mobile li a:hover{
+  border-bottom: 2px solid var(--white-1);
+}
+.nav-mobile li:nth-child(1) a{
+  cursor:pointer;
+  padding:10px;
+}
+.nav-mobile li:nth-child(1) a:hover{
+  border:0;
+}
+.nav-mobile li a i{
+  font-size: 3.5rem;
+}
+
+.nav-mobile.nav-visible{
+  visibility:visible;
+  opacity: 1;
+}
+
+.nav-mobile.nav-visible li{
+  transform: translate(0px);
+}
+
+.nav-visible li:nth-child(2){
+  transition-duration: 0.4s;
+}
+.nav-visible li:nth-child(3){
+  transition-duration: 0.3s;
+}
+.nav-visible li:nth-child(4){
+  transition-duration: 0.2s;
+}
+
+/*
+ * reddit login window-sidebar
+ */
+.login-container{
+  position: fixed;
+  top:-5px;
+  left:0;
+  width:100%;
+  height:105%;
+  z-index:430;
+  display:flex;
+  justify-content: flex-end;
+  background-color: rgba(0,0,0,0.5);
+  transition: all 0.4s;
+  opacity:0;
+  backdrop-filter: blur(30px);
+  visibility:hidden;
+}
+.login{
+  max-width:400px;
+  height:100%;
+  z-index: 430;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  background-color: var(--white-0);
+  overflow-y:auto;
+  transition: all 0.4s;
+  transform: translate(400px);
+}
+.login a.close-login{
+  padding:20px;
+  cursor:pointer;
+}
+.login a i{
+  font-size: 3rem;
+}
+.login div{
+  padding:20px;
+  height:100%;
+  margin-top: 30px;
+}
+.login div.page-2{
+  display:none;
+}
+
+.login button{
+  cursor:pointer;
+  margin-top: 20px;
+  background-color:transparent;
+  padding:15px;
+  font-family: Roboto, 'Julius Sans One', sans-serif;
+  font-weight:300;
+  font-size: 1.2rem;
+  color: white;
+  outline:none;
+  box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.2);
+}
+.login button:hover{
+  box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.1);
+}
+
+.login .reddit-bt{
+  background-image: linear-gradient(200deg, #e62a16, #F15646);
+}
+.login .guest-bt{
+  color: var(--black-1);
+}
+
+.login .checkbox-container{
+  margin-top: 20px;
+  font-family: Roboto, 'Julius Sans One', sans-serif;
+  font-size: 1.1rem;
+}
+.checkbox-container input[type="checkbox"]{
+  margin-right: 6px;
+}
+.login p{
+  font-family: Roboto, 'Julius Sans One', sans-serif;
+  font-size: 1.1rem;
+  margin-top:10px;
+}
+.login .description{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.login p a{
+  color: var(--black-0);
+  text-decoration: none;
+  background: linear-gradient(transparent 85%, var(--green-3) 0%);
+}
+.login p a:hover{
+  background: linear-gradient(transparent 55%, var(--green-3) 0%);
+}
+
+.login-visible{
+  visibility:visible;
+  opacity:1;
+}
+.login-visible .login{
+  transform: translate(0px);
+}
+
+/*
+ * cookie dialog
+ */
+.cookie-dialog{
+  visibility:hidden;
+  position:fixed;
+  left: 20px;
+  bottom:20px;
+  padding: 10px 20px 10px 20px;
+  height:auto;
+  width:auto;
+  background-color: var(--white-0);
+  z-index: 6969;
+  box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.5);
+  border-radius: 2px;
 }
 

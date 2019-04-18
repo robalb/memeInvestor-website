@@ -1,0 +1,45 @@
+
+:root{
+  /* palette 1 - temporary */
+  --white-0: #f7f9f9;
+  --white-1: #ecf0f1;
+
+  --black-0: #212121
+  --black-1: #222222;
+
+  --base: #11AD33;
+  --base-light: #35B651;
+  --base-light2: #59C972;
+  --base-dark: #078823;
+  --base-dark2: #006A17;
+
+  --compl: #E62A16;
+  --compl-light: #FF7E71;
+  --compl-light2: #F15646;
+  --compl-dark: #B41A0A;
+  --compl-dark2: #8D0D00;
+
+  /* palette 2 */
+  --white-0: #f7f9f9;
+  --white-1: #ecf0f1;
+
+  --black-0: #212121;
+  --black-1: #222222;
+  --black-0: rgba(0,0,0,0.8);
+
+  --primary-0: #A8EBBF;
+  --primary-1: #FAFFFB;
+  --primary-2: #D4F8E0;
+  --primary-3: #7CD79B;
+  --primary-4: #53BC76;
+
+  --complement-0: #FFC2B6;
+  --complement-1: #FFFBFA;
+  --complement-2: #FFe0da;
+  --complement-3: #FFA493;
+  --complement-4: #FF8770;
+
+  --green-1: #2caf92;
+  --green-2: #1E6D68;
+  --green-3: #55e7ca;
+}

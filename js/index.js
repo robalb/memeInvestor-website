@@ -27,44 +27,35 @@ document.addEventListener('DOMContentLoaded', ()=>{
   /*
    * init particles
    */
-  particlesJS.load('particles', 'js/particles.json', function() {
-    console.log('callback - particles.js config loaded');
-  });
+  const width = window.innerWidth || document.documentElement.clientWidth
+  const height = window.innerHeight || document.documentElement.clientHeight
+  if(Math.min(width, height) > 500){
+    particlesJS.load('particles', 'js/particles.json', function() {
+      console.log('callback - particles.js config loaded');
+    });
+  }
 
   /*
    * navbar burger + overlay
    */
   bt('js-burger', e =>{
-    console.log(1);
     ca('js-nav', 'nav-visible')
   });
 
   bt('js-close-nav', e =>{
-    ca('js-nav', 'nav-fade-out')
-    setTimeout(()=>{
-      cr('js-nav', 'nav-visible')
-      cr('js-nav', 'nav-fade-out')
-    }, 400);
+    cr('js-nav', 'nav-visible')
   });
 
   /*
    * login sidebar
    */
-  function showLogin(){
-    ca('js-login', 'login-visible')
-  }
+  const showLogin = ()=> ca('js-login', 'login-visible')
   bt('js-show-login', showLogin)
   bt('js-mob-show-login', showLogin)
+
   bt('js-close-login', e =>{
-    ca('js-login', 'login-fade-out')
-    setTimeout(() =>{
-      cr('js-login', 'login-fade-out')
-      cr('js-login', 'login-visible')
-    }, 400)
+    cr('js-login', 'login-visible')
   });
-
-
-
 
 });
 }

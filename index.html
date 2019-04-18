@@ -14,16 +14,17 @@
     <!-- <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet"> --> 
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Julius+Sans+One|Roboto:300|Playfair+Display:400,700" rel="stylesheet"> 
     <!-- page -->
+    <link type="text/css" rel="stylesheet" href="css/shared.css"/>
     <link type="text/css" rel="stylesheet" href="css/index.css"/>
     <script src="js/particles.js"></script>
     <script type="module" src="js/index.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
-    <div class="header-container">
-      <header>
+    <div class="top-nav-container">
+      <nav>
         <h1 class="logo"><a href="#">M</a></h1>
-        <div class="nav-container">
+        <div class="nav-block">
           <ul class="active">
             <li><a href="investors.html">investors</a></li>
             <li><a href="firms.html">firms</a></li>
@@ -38,39 +39,9 @@
             </div>
           </div>
         </div>
-      </header>
+      </nav>
     </div>
 
-    <ul class="nav-mobile" id="js-nav">
-      <li><a id="js-close-nav"><i class="material-icons"> clear </i></a></li>
-      <li><a href="investors.html">investors</a></li>
-      <li><a href="firms.html">firms</a></li>
-      <li><a xhref="dashboard.html" id="js-mob-show-login">dashboard</a></li>
-    </ul>
-
-    <dialog class="login-container" id="js-login">
-      <div class="login">
-        <a class="close-login" id="js-close-login"><i class="material-icons"> clear </i></a>
-        <div class="page-1" id="js-page-1" >
-          <h2>please connect your reddit account</h2>
-          <button class="reddit-bt">login with reddit</button>
-          <button class="guest-bt" id="js-open-guest-page">join as guest</button>
-          <p class="checkbox-container"><input type="checkbox" > stay logged</p>
-          <p class="description">After connecting your account you'll be able to manage your
-          investments, create, join or administrate firms directly from the dashboard<br><br>
-          We value your privacy. Your username is the only data required by this website.
-          Read our full <a href="#">privacy policy</a></p>
-
-        </div>
-        <div class="page-2" id="js-page-2">
-        </div>
-      </div>
-    </dialog>
-
-    <dialog class="cookie-popup" id="js-cookie-popup">
-    <h2>We use cookies</h2>
-    <button></button>
-    </dialog>
 
     <div class="hero">
       <div id="particles" class="particles"></div>
@@ -137,5 +108,44 @@
         </p>
       </div>
     </div>
+
+
+    <ul class="nav-mobile" id="js-nav">
+      <li><a href="#" id="js-close-nav"><i class="material-icons"> clear </i></a></li>
+      <li><a href="investors.html">investors</a></li>
+      <li><a href="firms.html">firms</a></li>
+      <li><a href="#" id="js-mob-show-login">dashboard</a></li>
+    </ul>
+
+    <dialog class="login-container" id="js-login">
+      <div class="login">
+        <a class="close-login" id="js-close-login"><i class="material-icons"> clear </i></a>
+        <div class="page-1" id="js-page-1" >
+          <h2>please connect your reddit account</h2>
+          <button class="reddit-bt">login with reddit</button>
+          <button class="guest-bt" id="js-open-guest-page">join as guest</button>
+          <p class="checkbox-container"><input type="checkbox" > stay logged</p>
+          <p class="description">After connecting your account you'll be able to manage your
+          investments, create, join or administrate firms directly from the dashboard<br><br>
+          We value your privacy. Your username is the only data required by this website.
+          Read our full <a href="#">privacy policy</a></p>
+        </div>
+        <div class="page-2" id="js-page-2">
+        </div>
+      </div>
+    </dialog>
+
+    <div class="cookie-dialog" id="js-cookie-popup">
+      <h2>We use cookies</h2>
+      <button>ok</button>
+      <button>don't</button>
+      <div>
+        <p class="checkbox-container"><input type="checkbox" >technical cookies</p>
+        <p class="checkbox-container"><input type="checkbox" >commercial cookies</p>
+        <p class="checkbox-container"><input type="checkbox" >statistical cookies</p>
+      </div>
+    </div>
+
+
   </body>
 </html>
