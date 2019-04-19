@@ -28,7 +28,7 @@
           <ul class="active">
             <li><a href="investors.html">investors</a></li>
             <li><a href="firms.html">firms</a></li>
-            <li><a xhref="dashboard.html" id="js-show-login">dashboard</a></li>
+            <li><a href="dashboard.html" id="js-show-login">dashboard</a></li>
           </ul>
           <!-- <a class="burger" href="#">=</a> -->
           <div class="burger-hitbox" id="js-burger">
@@ -119,7 +119,7 @@
 
     <dialog class="login-container" id="js-login">
       <div class="login">
-        <a class="close-login" id="js-close-login"><i class="material-icons"> clear </i></a>
+        <a href="#" class="close-login" id="js-close-login"><i class="material-icons"> clear </i></a>
         <div class="page-1" id="js-page-1" >
           <h2>please connect your reddit account</h2>
           <button class="reddit-bt">login with reddit</button>
@@ -135,15 +135,19 @@
       </div>
     </dialog>
 
-    <div class="cookie-dialog" id="js-cookie-popup">
-      <h2>We use cookies</h2>
-      <button>ok</button>
-      <button>don't</button>
-      <div>
-        <p class="checkbox-container"><input type="checkbox" >technical cookies</p>
-        <p class="checkbox-container"><input type="checkbox" >commercial cookies</p>
-        <p class="checkbox-container"><input type="checkbox" >statistical cookies</p>
+    <div class="cookie-dialog" id="js-cookie">
+      <div class="title-top">
+        <h3>&#x1F36A; </h3> <h2> we use cookies </h2>
+        <a href="#" class="close-cookie" id="js-close-cookie"><i class="material-icons"> clear </i></a>
       </div>
+      <p>Read our cookie <a href="cookies.html">policy</a></p>
+      <button class="bt-dont" id="js-cookie-no">don't</button>
+      <button id="js-cookie-ok">ok</button>
+      <!-- <div class="cookie-options" id="js-cookie-options"> -->
+      <!--   <p class="checkbox-container"><input type="checkbox" >technical cookies</p> -->
+      <!--   <p class="checkbox-container"><input type="checkbox" >commercial cookies</p> -->
+      <!--   <p class="checkbox-container"><input type="checkbox" >statistical cookies</p> -->
+      <!-- </div> -->
     </div>
 
 

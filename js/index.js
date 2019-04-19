@@ -39,23 +39,52 @@ document.addEventListener('DOMContentLoaded', ()=>{
    * navbar burger + overlay
    */
   bt('js-burger', e =>{
+    e.preventDefault()
     ca('js-nav', 'nav-visible')
   });
 
   bt('js-close-nav', e =>{
+    e.preventDefault()
     cr('js-nav', 'nav-visible')
   });
 
   /*
    * login sidebar
    */
-  const showLogin = ()=> ca('js-login', 'login-visible')
+  const showLogin = e=> {
+    e.preventDefault()
+    ca('js-login', 'login-visible')
+  }
   bt('js-show-login', showLogin)
   bt('js-mob-show-login', showLogin)
 
   bt('js-close-login', e =>{
+    e.preventDefault()
     cr('js-login', 'login-visible')
   });
+
+  /*
+   * cookie popup
+   */
+  if(true){
+    setTimeout( ()=>ca('js-cookie', 'cookie-visible'), 1000)
+    bt('js-close-cookie', e=>{
+      e.preventDefault()
+      cr('js-cookie', 'cookie-visible')
+    })
+
+    bt('js-cookie-ok', e=>{
+      e.preventDefault();
+      cr('js-cookie', 'cookie-visible')
+      //allow evil cookies
+    })
+
+    bt('js-cookie-no', e=>{
+      e.preventDefault();
+      cr('js-cookie', 'cookie-visible')
+      //don't allow evil cookies
+    })
+  }
 
 });
 }
